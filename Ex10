@@ -1,0 +1,29 @@
+1. 
+
+- số lượng tin nhắn: 50.000
+- input: 200 từ × 2,5 = 500 token/tin
+- output: 100 từ × 2,5 = 250 token/tin
+
+| nội dung | input | output |
+|---|---:|---:|
+| token mỗi tin | 500 | 250 |
+| tổng token 50000 tin | 25.000.000 | 12500000 |
+| đơn / 1 triệu token | $2,50 | $10 |
+| chi phí | $62,50 | $125 |
+
+2. 
+
+- tài khoản chatgpt plus cá nhân $20/tháng không phù hợp để chạy tự động chiến dịch 50.000 tin nhắn
+- dữ liệu khách hàng có thể chứa pii như họ tên, số điện thoại, địa chỉ. gửi trực tiếp lên dịch vụ không có kiểm soát phù hợp có nguy cơ làm lộ thông tin
+
+mô hình hạ tầng 
+
+- hệ thống marketing gửi yêu cầu đến enterprise api gateway
+- gateway kiểm tra api key, xác thực người dùng và giới hạn số lượng yêu cầu
+- hệ thống lọc hoặc ẩn thông tin pii trước khi gửi dữ liệu đến openai 
+
+các biện pháp bảo mật:
+
+- mã hóa dữ liệu khi truyền và khi lưu trữ
+- phân quyền truy cập theo từng nhân viên
+- sử dụng api key riêng, không đưa lên github
