@@ -1,0 +1,12 @@
+1. ai đưa ra mức phạt 20% và đình chỉ nhập hàng 30 ngày vì không có văn bản hợp đồng để đối chiếu. ai đã tự suy đoán dựa trên kiến thức đã học và tạo ra thông tin không đúng với hợp đồng thực tế. đây là hiện tượng hallucination (ảo giác của ai)
+
+2. prompt rag grounding hoàn chỉnh:
+
+văn bản hợp đồng:
+“phạt 5% giá trị lô bị dập nát và yêu cầu đổi hàng trong 24h”
+
+câu hỏi nghiệp vụ:
+theo hợp đồng martx, nhà cung cấp giao rau bị dập nát trên 10% thì bị phạt bao nhiêu và phải thực hiện trách nhiệm gì
+
+negative constraint:
+chỉ sử dụng thông tin trong văn bản hợp đồng được cung cấp. nếu thông tin cần tìm không có trong tài liệu, hãy trả lời đúng câukhông có dữ liệu trong tài liệ. tuyệt đối không tự suy đoán hoặc sử dụng kiến thức bên ngoài
