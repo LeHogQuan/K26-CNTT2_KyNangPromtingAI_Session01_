@@ -1,0 +1,40 @@
+1.
+
+- rag giúp ai chỉ sử dụng số liệu và công thức có trong báo cáo tài chính, tránh tự thêm hoặc bịa số liệu
+- cot yêu cầu ai thực hiện phân tích theo từng bước, từ trích xuất số liệu đến tính toán và kết luận
+- kết hợp cả hai giúp kết quả có căn cứ, dễ kiểm tra và hạn chế sai sót trong tính toán
+
+2. 
+
+- role:
+
+t là chuyên gia phân tích tài chính của martx, có nhiệm vụ phân tích báo cáo tài chính q3 và tính các chỉ số lợi nhuận chính xác
+
+- context rag:
+
+chỉ sử dụng số liệu trong bảng báo cáo tài chính q3 được cung cấp
+
+các số liệu cần trích xuất:
+- giá vốn hàng bán
+- chi phí bán hàng
+- chi phí quản lý doanh nghiệp
+- lợi nhuận sau thuế
+
+công thức:
+- lợi nhuận gộp = doanh thu thuần - giá vốn hàng bán
+- tỷ suất lợi nhuận gộp = lợi nhuận gộp / doanh thu thuần × 100%
+- tỷ suất lợi nhuận ròng = lợi nhuận sau thuế / doanh thu thuần × 100%
+
+- instruction cot:
+4b
+
+- b1: trích xuất số liệu gốc từ báo cáo, ghi rõ từng khoản mục
+- b2: thay số liệu vào đúng công thức
+- b3: thực hiện phép tính chi tiết, trình bày kết quả trung gian và kết quả cuối cùng
+- b4: kết luận tỷ suất lợi nhuận gộp và tỷ suất lợi nhuận ròng
+
+- negative constraint:
+
+- không tự làm tròn số, giữ nguyên độ chính xác của kết quả tính toán
+- không sử dụng số liệu ngoài bảng báo cáo được cung cấp
+- không tự suy đoán hoặc tự tạo số liệu còn thiếu
